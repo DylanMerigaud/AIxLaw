@@ -1,7 +1,57 @@
 # [LLM x Law Hackathon](https://lu.ma/63trnmfl?tk=2nF8W5)
 
 Project submited for the [LLM x Law Hackathon](https://lu.ma/63trnmfl?tk=2nF8W5).
+
+## LLM x Law Hackathon @Station F
+​LLMs, a foundation model capable of understanding and generating natural language text, have the potential to transform legal research, contract analysis, data privacy, regulation and much more.
+
+​This hackathon hopes to build solutions that consider the safe and trustworthy integration of LLMs for legal work. You'll be asked to leverage an LLM toolkit and build & ship a working demo/prototype that tackles a pressing legal problem. Join us for the first edition of the LLM x Law Hackathon, founded by CodeX at Stanford, in Paris! We encourage you to think boldly, creatively, and across multiple dimensions!
+
+​Hosted by:
+Stanford Center for Legal Informatics (https://law.stanford.edu/codex-the-stanford-center-for-legal-informatics/)
+Koyeb (https://www.koyeb.com/)
+
+​Hosted by:
+Megan Ma (Stanford CodeX)
+Pierre-Loïc Doulcet (Stanford CodeX, LlamaIndex)
+Yann Léger (Koyeb)
+
+​Sponsors:
+Koyeb (https://www.koyeb.com/)
+Neon (https://neon.tech/)
+WalterBillet (https://walterbillet.com/)
+LlamaIndex (https://www.llamaindex.ai/)
+Mistral AI (https://mistral.ai/)
+Jus Mundi (https://jusmundi.com/en)
+Thomson Reuters (https://www.thomsonreuters.com/en.html)
+
+​Judged by:
+Marie Torelli (Mistral)
+Chen Gu (Dentons)
+Thu Ha Nghiem (Cloudera)
+Campbell Hutcheson (Angel Investor)
+Yann Léger (Koyeb)
+Atli Cervantes (Neon)
+Pierce Kelaita (GenAI Collective)
+Tara Waters (C-suite legal)
+Ilona Logvinova (Cleary Gottlieb)
+John Ferro (Jus Mundi)
+Jonathan Schwarz (Safe Sign Technologies/Thomson Reuters)
+Alexander Fessas (ICC)
+Hélène van Lith (ICC)
+Victoria Albrecht (Springbok AI)
+
+​Mentors:
+Alex Mac (Truth Systems, Stanford CodeX)
+Doa Biddine (Sciences Po, World Bank)
+Nathalie Fouet (ICC)
+Nicolas Charliglione (Koyeb)
+Teodora Groza (Sciences Po)
+Julia Zeidan (Jus Mundi)
+
 The rest of this README.md is from the starter repo.
+
+
 
 This is a [LlamaIndex](https://www.llamaindex.ai/) project using [Next.js](https://nextjs.org/) bootstrapped with [`create-llama`](https://github.com/run-llama/LlamaIndexTS/tree/main/packages/create-llama).
 
