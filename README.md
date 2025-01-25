@@ -1,3 +1,8 @@
+# [LLM x Law Hackathon](https://lu.ma/63trnmfl?tk=2nF8W5)
+
+Project submited for the [LLM x Law Hackathon](https://lu.ma/63trnmfl?tk=2nF8W5).
+The rest of this README.md is from the starter repo.
+
 This is a [LlamaIndex](https://www.llamaindex.ai/) project using [Next.js](https://nextjs.org/) bootstrapped with [`create-llama`](https://github.com/run-llama/LlamaIndexTS/tree/main/packages/create-llama).
 
 ## Getting Started
