@@ -16,5 +16,9 @@
   },
   "transpilePackages": [
     "highlight.js"
-  ]
+  ],
+  "output": "export",
+  "images": {
+    "unoptimized": true
+  }
 }

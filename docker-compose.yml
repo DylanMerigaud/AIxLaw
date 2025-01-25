@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: ./frontend
+      target: release
+    ports:
+      - "${PORT:-4567}:4567"
+    environment:
+      - NODE_ENV=production
+
+  backend:
+    build:
+      context: ./backend
+      target: release
+    ports:
+      - "8000:8000"
+    environment:
+      - PYTHONUNBUFFERED=1

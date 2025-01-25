@@ -2,6 +2,7 @@
 
 import { ChatInput, useChatUI, useFile } from "@llamaindex/chat-ui";
 import { DocumentPreview, ImagePreview } from "@llamaindex/chat-ui/widgets";
+import { Send } from "lucide-react";
 import { LlamaCloudSelector } from "./custom/llama-cloud-selector";
 import { useClientConfig } from "./hooks/use-config";
 
@@ -43,7 +44,7 @@ export default function CustomChatInput() {
 
   return (
     <ChatInput
-      className="shadow-xl rounded-xl"
+      className="bg-base-100 rounded-xl "
       resetUploadedFiles={reset}
       annotations={annotations}
     >
@@ -66,14 +67,17 @@ export default function CustomChatInput() {
         )}
       </div>
       <ChatInput.Form>
-        <ChatInput.Field />
+        <ChatInput.Field className="bg-transparent border-2 resize-none" />
         <ChatInput.Upload onUpload={handleUploadFile} />
         <LlamaCloudSelector />
         <ChatInput.Submit
+          className="bg-[#209CEE] text-white"
           disabled={
             isLoading || (!input.trim() && files.length === 0 && !imageUrl)
           }
-        />
+        >
+          <Send />
+        </ChatInput.Submit>
       </ChatInput.Form>
     </ChatInput>
   );

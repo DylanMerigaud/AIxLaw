@@ -19,7 +19,10 @@ export default function ChatSection() {
     },
   });
   return (
-    <ChatSectionUI handler={handler} className="w-full h-full">
+    <ChatSectionUI
+      handler={handler}
+      className="w-full max-w-[768px] flex flex-col h-full"
+    >
       <CustomChatMessages />
       <CustomChatInput />
     </ChatSectionUI>

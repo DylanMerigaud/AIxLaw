@@ -1,21 +1,28 @@
 import Header from "@/app/components/header";
+import { PanelLeftClose, PanelLeftOpen } from "lucide-react";
+import Image from "next/image";
+import React from "react";
 import ChatSection from "./components/chat-section";
+import icon from "./icons/android-chrome-512x512.png";
 
-const NEW = false;
+const NEW = true;
 
 const Nav = () => (
   <div className="navbar bg-base-100 border-b">
     <div className="flex-1">
-      <a className="btn btn-ghost text-xl">daisyUI</a>
+      <label
+        htmlFor="my-drawer-2"
+        className="btn btn-ghost btn-md drawer-button lg:hidden h-auto"
+      >
+        <PanelLeftOpen />
+      </label>
+      <a className="btn btn-ghost text-xl">
+        <Image src={icon} alt="Flaudit" width={32} height={32} />
+        Flaudit
+      </a>
     </div>
     <div className="flex-none gap-2">
-      <div className="form-control">
-        <input
-          type="text"
-          placeholder="Search"
-          className="input input-bordered w-24 md:w-auto"
-        />
-      </div>
+      <div className="form-control"></div>
       <div className="dropdown dropdown-end">
         <div
           tabIndex={0}
@@ -51,33 +58,85 @@ const Nav = () => (
   </div>
 );
 
+const options = [
+  "Litigation",
+  "Intellectual Property",
+  "GDPR",
+  "Human Resources",
+  "Tax and Financial Aspects",
+] as const;
+
+const history = {
+  Today: [
+    "Overview of PCA Case No, 2014",
+    "Latest ICC arbitration rules",
+    "Application of VCLT Articles 31",
+    "Characterizing License revocation",
+    "Oucome of Force Majeure Claim",
+    "Application of DCF Method by A",
+  ],
+  "Last week": [
+    "State Immunity and Arbitration",
+    "Case Background and Legal Iss",
+    "Latest ICC arbitration rules",
+    "Evolution of Fair and Equitable",
+    "Main Legal Issues in Antaris Sol",
+    "Oucome of Force Majeure Clain",
+    "Application of DCF Method byA",
+  ],
+};
+
 function Drawer({ children }: { children: React.ReactNode }) {
   return (
-    <div className="drawer lg:drawer-open">
+    <div className="drawer lg:drawer-open flex-1 min-h-fit">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-      <div className="drawer-content flex flex-col items-center justify-center">
+      <div className="drawer-content flex flex-col items-center h-full p-4">
         {children}
-        <label
-          htmlFor="my-drawer-2"
-          className="btn btn-primary drawer-button lg:hidden"
-        >
-          Open drawer
-        </label>
       </div>
-      <div className="drawer-side">
-        <label
-          htmlFor="my-drawer-2"
-          aria-label="close sidebar"
-          className="drawer-overlay"
-        ></label>
-        <ul className="menu bg-base-200 text-base-content min-h-full w-80 p-4">
-          <li>
-            <a>Sidebar Item 1</a>
-          </li>
-          <li>
-            <a>Sidebar Item 2</a>
-          </li>
-        </ul>
+      <div className="drawer-side lg:h-[calc(100dvh-4rem)] max-w-full">
+        <div className="bg-base-200 h-full overflow-auto flex flex-col">
+          <label
+            htmlFor="my-drawer-2"
+            aria-label="close sidebar"
+            className="btn btn-ghost btn-md drawer-overlay lg:hidden m-2"
+          >
+            <PanelLeftClose />
+          </label>
+          <div className="flex-1">
+            <div className="text-2xl font-bold p-4">History</div>
+            {(["Today", "Last week"] as const).map((k) => (
+              <React.Fragment key={k}>
+                <div className="text-lg px-4">Last Week</div>
+                <ul className="menu text-base-content w-80 p-4">
+                  {history[k].map((item) => (
+                    <li key={item}>
+                      <a>{item}...</a>
+                    </li>
+                  ))}
+                </ul>
+              </React.Fragment>
+            ))}
+          </div>
+          <div className="p-4 flex">
+            <label className="form-control w-full max-w-xs">
+              <div className="label">
+                <span className="label-text">
+                  Choose a category to search in
+                </span>
+              </div>
+              <select className="select select-bordered flex-1">
+                {options.map((option) => (
+                  <option
+                    key={option}
+                    selected={option === "Intellectual Property"}
+                  >
+                    {option}
+                  </option>
+                ))}
+              </select>
+            </label>
+          </div>
+        </div>
       </div>
     </div>
   );
@@ -86,9 +145,10 @@ function Drawer({ children }: { children: React.ReactNode }) {
 export default function Home() {
   if (NEW) {
     return (
-      <main className="w-full h-full bg">
+      <main className="w-full h-full bg flex flex-col">
+        <Nav />
         <Drawer>
-          <Nav />
+          <ChatSection />
         </Drawer>
       </main>
     );
